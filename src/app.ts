@@ -1,13 +1,8 @@
-import "reflect-metadata";
 import express from "express";
-import crudRouter from "./routes/CRUD/crud.controller";
-import { handleErrorDB, updateRequestDB } from "./routes/CRUD/crud.middleware";
+import helloRoute from "./routes/Hello/hello.controller";
 
 const app = express();
-app.use(express.json());
 
-app.use("/", crudRouter);
-app.use(updateRequestDB);
-app.use(handleErrorDB);
+app.use("/", helloRoute);
 
 export default app;
